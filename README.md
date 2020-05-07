@@ -16,6 +16,11 @@ Please provide:
 * a working server using Docker and Dockerfile to run it
 * Unit tests for the server
 * Well commented code that can serve as documentation of the  system
+ 
+Once finished, please invite the following people to your repo:
+* @xavier.anguera
+* @dev1x
+
 
 Bonus points: Add a script that tests the API end-to-end that can be used as an automated regression test.
 

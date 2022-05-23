@@ -72,3 +72,17 @@ def app(request):
 
     request.addfinalizer(teardown)
     return app
+
+@pytest.fixture(scope='function')
+def client(app):
+    """Create a client with app.test_client() using app fixture.
+    Tests will use the client to make requests to the application
+
+    Parameters:
+        app (flask.app.Flask): The application instance.
+
+    Returns:
+        FlaskClient: A client to allow make requests to the application.
+    """
+
+    return app.test_client()

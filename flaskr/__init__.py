@@ -80,7 +80,9 @@ def init_controllers(app: Flask) -> None:
 
     # register controller
     from .controller import account
+    from .controller import index
     app.register_blueprint(account.bp)
+    app.register_blueprint(index.bp)
 
 def init_commands(app: Flask) -> None:
     from flaskr.commands import register_commands

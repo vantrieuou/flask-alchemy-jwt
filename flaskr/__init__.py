@@ -54,8 +54,6 @@ def load_config(app: Flask, test_config) -> None:
 def init_instance_folder(app: Flask) -> None:
     """Ensure the instance folder exists.
 
-    Parameters:
-        app (flask.app.Flask): The application instance Flask that'll be running
     """
 
     try:
@@ -64,20 +62,13 @@ def init_instance_folder(app: Flask) -> None:
         pass
 
 
-def init_database(app) -> None:
-    """Responsible for initializing and connecting to the database
-    to be used by the application.
-
-    Parameters:
-        app (flask.app.Flask): The application instance Flask that'll be running
-    """
-
+def init_database(app: Flask) -> None:
     from .database import init
     init(app)
 
 
 def init_controllers(app: Flask) -> None:
-    """Registes the blueprint to the application.
+    """Registers the error handler and controllers of the application.
 
     Parameters:
         app (flask.app.Flask): The application instance Flask that'll be running
@@ -91,6 +82,6 @@ def init_controllers(app: Flask) -> None:
     from .controller import account
     app.register_blueprint(account.bp)
 
-def init_commands(app):
+def init_commands(app: Flask) -> None:
     from flaskr.commands import register_commands
     register_commands(app)

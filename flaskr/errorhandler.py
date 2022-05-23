@@ -1,10 +1,10 @@
 """This module registers the error handler on the application."""
 
 
-from flask import make_response, jsonify
+from flask import make_response, jsonify, Flask
 
 
-def register_handler(app):
+def register_handler(app: Flask):
     """Registers the error handler is a function to common error HTTP codes
 
     Parameters:

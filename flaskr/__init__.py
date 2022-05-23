@@ -1,14 +1,9 @@
-"""This package is Flask HTTP REST API Template template that already has the database bootstrap
-implemented and also all feature related with the user authentications.
-
-Application features:
-    Python 3.7
-    Flask
-    PEP-8 for code style
+"""This package is Flask HTTP REST API template that already has the database bootstrap
+implemented all feature.
 
 This module contains the factory function 'create_app' that is
 responsible for initializing the application according
-to a previous configuration.
+to given configuration.
 """
 
 
@@ -34,6 +29,7 @@ def create_app(test_config: dict = {}) -> Flask:
     init_instance_folder(app)
     init_database(app)
     init_controllers(app)
+    init_commands(app)
     return app
 
 
@@ -94,3 +90,7 @@ def init_controllers(app: Flask) -> None:
     # register controller
     from .controller import account
     app.register_blueprint(account.bp)
+
+def init_commands(app):
+    from flaskr.commands import register_commands
+    register_commands(app)

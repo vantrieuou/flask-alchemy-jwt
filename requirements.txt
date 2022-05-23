@@ -1,6 +1,4 @@
 Flask
-flask_restful
 python-dotenv
 pytest
 coverage
-flask_migrate

@@ -7,9 +7,7 @@ from flask import (
 )
 from flaskr.exceptions import TokenNotFound
 
-
 bp = Blueprint('account', __name__, url_prefix='/account')
-
 
 @bp.route('/register', methods=('GET',))
 def register() -> Response:

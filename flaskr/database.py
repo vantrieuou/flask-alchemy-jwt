@@ -3,8 +3,6 @@ using the SQLAlchemy library."""
 
 
 from flask import Flask
-from flask_migrate import Migrate
-
 from sqlalchemy import create_engine
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import scoped_session, sessionmaker
@@ -36,10 +34,6 @@ def init(app: Flask) -> None:
 
     # attach the shutdown_session function to be execute when a request ended.
     app.teardown_appcontext(shutdown_session)
-
-    # Using Flask-Migrate as the handler for database migration.
-    # from .model import User, Token
-    # migrate = Migrate(app, Base)
 
 
 def shutdown_session(exception=None) -> None:

@@ -7,9 +7,9 @@ class Book(Base):
     id = Column(Integer, primary_key=True)
     user_id = Column(Integer, ForeignKey('users.id'), nullable=False)
     user = relationship("User", back_populates="books")
-    name = Column(String(50), unique=True, nullable=False)
-    Author = Column(String(50), unique=True, nullable=False)
-    Publisher = Column(String(50), nullable=False)
+    name = Column(String(50), nullable=False)
+    author = Column(String(50), nullable=False)
+    publisher = Column(String(50), nullable=False)
     book_prize = Column(Integer)
 
     def __repr__(self):

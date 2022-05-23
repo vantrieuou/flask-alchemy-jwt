@@ -16,8 +16,6 @@ class Default():
     """
     DEBUG = False
     TESTING = False
-    JWT_BLACKLIST_ENABLED = True
-    JWT_BLACKLIST_TOKEN_CHECKS = ['access', 'refresh']
     SQLALCHEMY_TRACK_MODIFICATIONS = False
 
 
@@ -52,4 +50,5 @@ class Development(Default):
     DEBUG = True
     SECRET_KEY = 'dev'
     JWT_SECRET_KEY = 'dev'
+    # Import database config by file .env
     SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL')

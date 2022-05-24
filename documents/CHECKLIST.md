@@ -2,7 +2,7 @@ Done - Build skeleton: exception handler
 Done - Define models
 Done - Generate DB schema with SQLite
 Done - Setup Unit test
-Setup integration test
+Done - Setup integration test
 User registration: email address + password
 User login: email + password -> session token
 User login: email + password -> fail: 40* errors -> Handel ValidationException 
@@ -19,3 +19,10 @@ clone repo into your own account
 invite to repo:
 * @xavier.anguera
 * @alan.shang
+
+
+Document:
+* how to generate serect key
+* layout
+* architecture
+* Exception following https://flask.palletsprojects.com/en/0.12.x/patterns/apierrors/

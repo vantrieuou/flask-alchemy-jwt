@@ -10,7 +10,7 @@ from flaskr.authentication import token_required
 
 bp = Blueprint('book', __name__, url_prefix='/books')
 
-@bp.route('', methods=('GET',))
+@bp.route('', methods=['GET'])
 @token_required
 def list(current_user) -> Response:
     return make_response(jsonify({

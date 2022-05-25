@@ -16,6 +16,6 @@ def list(current_user) -> Response:
     return make_response(jsonify({
         'status': 'success',
         'data': {
-            'account': 'trieubui'
+            'message': 'trieubui'
         }
     }))

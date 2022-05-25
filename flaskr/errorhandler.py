@@ -2,7 +2,7 @@
 
 
 from flask import make_response, jsonify, Flask
-from flaskr.exceptions import JwtTokenException
+from flaskr.exceptions import MyException
 
 
 def register_handler(app: Flask):
@@ -44,7 +44,7 @@ def register_handler(app: Flask):
             'message': 'not Found'
         }), 404)
 
-    @app.errorhandler(JwtTokenException)
+    @app.errorhandler(MyException)
     def wjt_token(error):
         return make_response(jsonify({
             'status': 'error',

@@ -29,8 +29,8 @@ class Production(Default):
         SQLALCHEMY_DATABASE_URI (str): URI for the database source.
     """
 
-    SECRET_KEY = b'\xacP=\x12\xa6\xa2\x19`\xbcu{\x0b\xe4&H\x8d'
-    JWT_SECRET_KEY = b'\xacP=\x12\xa6\xa2\x19`\xbcu{\x0b\xe4&H\x8d'
+    SECRET_KEY = '0asdasa04f2af45d3a4e161a7dd2d17fddasdae47f'
+    JWT_SECRET_KEY = '004f2af4d5d3a4e161a7dd2d17fdae47f'
     SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL')
 
 

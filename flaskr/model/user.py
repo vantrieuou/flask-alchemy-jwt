@@ -9,7 +9,7 @@ class User(Base):
     email = Column(String(50), unique=True)
     password = Column(String(120))
     books = relationship("Book", back_populates="user")
-    created_date = Column(DateTime(timezone=True), onupdate=func.now())
+    created_date = Column(DateTime(timezone=True), server_default=func.now())
 
     def __repr__(self):
         return f'<User {self.email!r}>'

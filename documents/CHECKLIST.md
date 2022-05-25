@@ -4,12 +4,12 @@ Done - Generate DB schema with SQLite
 Done - Setup Unit test
 Done - Setup integration test
 Done - User registration: email address + password
-User login: email + password -> session token
-User login: email + password -> fail: 40* errors -> Handel ValidationException 
-reset password: email + current password + new password.
+Done -  User login: email + password -> session token
+Done - User login: email + password -> fail: 40* errors -> Handel ValidationException 
+Reset password: email + current password + new password.
 Done - password MUST encrypt
-session token: user ID, creation date and any other information you deem interesting
-Done use a jwt token
+Done - session token: user ID, creation date and any other information you deem interesting
+Done - use a jwt token
 Docker and Dockerfile 
 readme
 Commented code that can serve as documentation of the system

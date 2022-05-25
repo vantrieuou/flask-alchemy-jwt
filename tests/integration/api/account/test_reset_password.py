@@ -10,18 +10,17 @@ def test_auth_correct_reset_password_returning_200_status_code(client):
         """
 
     data = {
-        'email': 'test@mail.com',
+        'email': 'resetting_user@mail.com',
         'current_password': 'test',
         'new_password': '123',
         'confirm_password': '123'
     }
-    response = client.post('/account/login',
+    response = client.post('/account/reset-password',
                            data=json.dumps(data),
                            content_type='application/json')
 
     assert response.status_code == 200
     assert response.json['status'] == 'success'
-    assert response.json['data']['token']
-    assert response.json['data']['message'] == 'Login successfully'
+    assert response.json['data']['message'] == 'Reset password successfully.'
 
 

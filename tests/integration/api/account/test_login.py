@@ -11,7 +11,7 @@ def test_auth_login_with_correct_credentials_passed_returning_200_status_code(cl
         """
 
     data = {'email': 'test@mail.com', 'password': 'test'}
-    response = client.post('/account/reset-password',
+    response = client.post('/account/login',
                            data=json.dumps(data),
                            content_type='application/json')
 

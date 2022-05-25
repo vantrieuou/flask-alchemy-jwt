@@ -30,10 +30,13 @@ def create_test_user() -> None:
     from flaskr.database import db_session
 
     user = db_session.query(User).filter_by(email='test@mail.com').first()
+    # resetting_user = db_session.query(User).filter_by(email='resetting_user@mail.com').first()
 
     if not user:
         user = User(public_id=str(uuid.uuid4()), email='test@mail.com', password=generate_password_hash('test'))
+        resetting_user = User(public_id=str(uuid.uuid4()), email='resetting_user@mail.com', password=generate_password_hash('test'))
         db_session.add(user)
+        db_session.add(resetting_user)
         db_session.commit()
 
 @pytest.fixture

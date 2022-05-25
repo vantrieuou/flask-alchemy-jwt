@@ -4,9 +4,9 @@ Done - Generate DB schema with SQLite
 Done - Setup Unit test
 Done - Setup integration test
 Done - User registration: email address + password
-Done -  User login: email + password -> session token
+Done - User login: email + password -> session token
 Done - User login: email + password -> fail: 40* errors -> Handel ValidationException 
-Reset password: email + current password + new password.
+Done - Reset password: email + current password + new password.
 Done - password MUST encrypt
 Done - session token: user ID, creation date and any other information you deem interesting
 Done - use a jwt token

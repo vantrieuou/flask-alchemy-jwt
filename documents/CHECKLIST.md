@@ -1,4 +1,4 @@
-Done - Build skeleton: exception handler
+```Done - Build skeleton: exception handler
 Done - Define models
 Done - Generate DB schema with SQLite
 Done - Setup Unit test
@@ -20,3 +20,4 @@ invite to repo:
 * @xavier.anguera
 * @alan.shang
 
+```

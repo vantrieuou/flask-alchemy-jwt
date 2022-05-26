@@ -1,6 +1,6 @@
 # Patterns
 
-This project uses 3-tier players as its base architecture. They include:
+This project uses 3-tiers players as its base architecture. They include:
 
 `/model:` domain layer
 
@@ -11,7 +11,7 @@ This project uses 3-tier players as its base architecture. They include:
 Read more about patterns of sqlalchemy at https://techspot.zzzeek.org/2012/02/07/patterns-implemented-by-sqlalchemy/
 
 `Repository Pattern`: sqlalchemy implemented the pattern in Session. So I refer use Session functionality anywhere. 
-When interacting with database, neither use query builder nor create a new repostory layer. 
+When interacting with database, neither use query builder nor create a new repository layer. 
 Since that, we can be hands-free and focus on business logic in domain models
 
 `Service Layer`: The project is simple enough. And the controllers are enough for controlling logic. Service layer is removed for simplifying.
@@ -20,14 +20,14 @@ Since that, we can be hands-free and focus on business logic in domain models
 
 `Error Handler`: will handle exceptions and invalid form errors, and return a consistent format. Following article https://flask.palletsprojects.com/en/0.12.x/patterns/apierrors/. In my opinion, this approach will save much time in the future if developing APIs
 
-`Code first instead of Database first`: to do the  project, I use code first approach. That means the domain object should be created first, generating database schema later.
-As integration tests, the schema is generated automatically with SQLite for each running time.
+`Code first instead of Database first`: That means the domain object should be created first, generating database schema later.
+As integration tests, the db schema is generated automatically with SQLite for each running time.
 
 `TDD`: Test cases will be made before implementing code.
 
 # Project layout
 
-```angular2html
+```
 .
 |-- Dockerfile
 |-- README.md

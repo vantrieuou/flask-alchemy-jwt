@@ -58,7 +58,7 @@ def app(request):
     # app instance
     app = create_app({
         'TESTING': True,
-        'SQLALCHEMY_DATABASE_URI': os.environ.get('DATABASE_URL_TESTING'),
+        'SQLALCHEMY_DATABASE_URI': os.environ.get('DATABASE_URL'),
         'SECRET_KEY': 'testing',
         'JWT_SECRET_KEY': 'testing'
     })

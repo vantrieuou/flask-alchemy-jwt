@@ -17,3 +17,5 @@ build/
 default.vim
 bookstore.sqlite
 docker/
+
+.env

@@ -1,7 +1,6 @@
 import time
 from werkzeug.security import generate_password_hash
 from sqlalchemy import desc
-from flaskr.model.user import User
 from datetime import datetime, timedelta
 import jwt
 from flask import current_app
@@ -50,7 +49,7 @@ def get_users_count(session):
     return session.query(User).order_by(desc(User.id)).count()
 
 
-def get_jwt_token(user: User):
+def get_jwt_token(user):
     token = jwt.encode(
         {
             'public_id': user.public_id,

@@ -26,17 +26,19 @@ def create_test_user() -> None:
     """Creates test user."""
 
     from flaskr.model.user import User
+    from flaskr.model.book import Book
     from werkzeug.security import generate_password_hash
     from flaskr.database import db_session
 
     user = db_session.query(User).filter_by(email='test@mail.com').first()
-    # resetting_user = db_session.query(User).filter_by(email='resetting_user@mail.com').first()
 
     if not user:
         user = User(public_id=str(uuid.uuid4()), email='test@mail.com', password=generate_password_hash('test'))
         resetting_user = User(public_id=str(uuid.uuid4()), email='resetting_user@mail.com', password=generate_password_hash('test'))
         db_session.add(user)
         db_session.add(resetting_user)
+        book = Book(user_id=1, name="Book1", author='author1', publisher='publisher', book_prize=1000)
+        db_session.add(book)
         db_session.commit()
 
 @pytest.fixture
@@ -89,3 +91,23 @@ def client(app):
     """
 
     return app.test_client()
+
+@pytest.fixture(scope='function')
+def db_session(app, request):
+    """Creates a new database session for a test.
+
+    Parameters:
+        app (flask.app.Flask): The application instance.
+        request (FixtureRequest): A request for a fixture from a test or fixture function
+
+    Returns:
+        db_session: a SLQAlchmey Session object.
+    """
+
+    from flaskr.database import db_session
+
+    def teardown():
+        db_session.remove()
+
+    request.addfinalizer(teardown)
+    return db_session

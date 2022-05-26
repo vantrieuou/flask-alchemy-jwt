@@ -12,8 +12,8 @@ Done - session token: user ID, creation date and any other information you deem 
 Done - use a jwt token
 Done - Docker and Dockerfile 
 No need - readme
-Commented code that can serve as documentation of the system
-Write document of architecture
+Done - Commented code that can serve as documentation of the system
+Done - Write document of architecture
 Write document of how to set up
 Done - clone repo into your own account
 invite to repo:

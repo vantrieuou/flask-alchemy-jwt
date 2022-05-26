@@ -1,0 +1,28 @@
+version: '3'
+
+services:
+
+  pythonflask:
+    build: .
+    container_name: pythonflask
+    volumes:
+      - ./:/usr/src/app/
+    ports:
+      - 5001:5000
+    environment:
+      FLASK_ENV: development
+      FLASK_APP: flaskr
+
+  databasemysql:
+    image: mysql:5.7
+    container_name: databasemysql
+    volumes:
+      - ./docker/mysql_data:/var/lib/mysql
+    environment:
+      - "MYSQL_DATABASE=flask"
+      - "MYSQL_PASSWORD=password"
+      - "MYSQL_ROOT_PASSWORD=password"
+    expose:
+      - "3306"
+    ports:
+      - 3306:3306

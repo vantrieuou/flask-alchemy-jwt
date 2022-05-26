@@ -1,5 +1,7 @@
-Flask
-python-dotenv
-pytest
-coverage
-mock-alchemy
+Flask==2.1.2
+python-dotenv== 0.20.0
+pytest==7.1.2
+coverage==6.3.3
+mock-alchemy==0.2.5
+pyjwt==1.7.1
+PyMySQL

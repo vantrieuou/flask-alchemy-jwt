@@ -15,14 +15,14 @@ readme
 Commented code that can serve as documentation of the system
 Write document of architecture
 Write document of how to set up
-clone repo into your own account
+Done - clone repo into your own account
 invite to repo:
 * @xavier.anguera
 * @alan.shang
 
 
 Document:
-* how to generate serect key
-* layout
+* how to generate secret key
+* layout structure
 * architecture
 * Exception following https://flask.palletsprojects.com/en/0.12.x/patterns/apierrors/

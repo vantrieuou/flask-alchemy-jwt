@@ -1,15 +1,6 @@
-POST http://127.0.0.1:5000/auth/register
-Content-Type: application/json
-Cookie: null;
-
-{
-  "username": "user1",
-  "password": "pas"
-}
-
 ###
-GET http://127.0.0.1:5000/books
+GET http://127.0.0.1:5001/books
 Accept: application/json
-x-access-tokens: xxxxxx
+x-access-tokens: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJwdWJsaWNfaWQiOiI5YTBhYzY1MS0wODFkLTQ5NDgtOWM2NS0zMmU5OGEyODljMTYiLCJjcmVhdGVkX2RhdGUiOiIyMDIyLTA1LTI2IDA0OjQwOjExIiwiZXhwIjoxNjU4NzI0MDk2fQ.1X5h1ESDB97Nw0ZULPcIvTYKo2jtqg2SlDTZI_q2cO0
 
 ###

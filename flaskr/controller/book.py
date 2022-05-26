@@ -7,15 +7,31 @@ from flask import (
 )
 import flaskr.exceptions
 from flaskr.authentication import token_required
-
+from flaskr.database import db_session
+from flaskr.model.user import User
+# from flaskr.model.book import Book
+from sqlalchemy.orm import joinedload
 bp = Blueprint('book', __name__, url_prefix='/books')
 
 @bp.route('', methods=['GET'])
 @token_required
-def list(current_user) -> Response:
+def ebook_list(current_user) -> Response:
+    # Use Joined Eager Loading to save query statement
+    users = db_session.query(User).options(joinedload(User.books, innerjoin=True)).all()
+    output = []
+    for u in users:
+        for book in u.books:
+            book_data = {}
+            book_data['id'] = book.id
+            book_data['name'] = book.name
+            book_data['author'] = book.puthor
+            book_data['publisher'] = book.publisher
+            book_data['user_name'] = book.user.name
+            output.append(book_data)
+
     return make_response(jsonify({
         'status': 'success',
         'data': {
-            'message': 'trieubui'
+            'list_of_books': output
         }
     }))

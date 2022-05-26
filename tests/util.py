@@ -1,7 +1,10 @@
 import time
 from werkzeug.security import generate_password_hash
 from sqlalchemy import desc
-
+from flaskr.model.user import User
+from datetime import datetime, timedelta
+import jwt
+from flask import current_app
 
 def get_unique_email():
     return f"email{get_unique_id()}@mail.com"
@@ -45,3 +48,16 @@ def get_users_count(session):
 
     from flaskr.model.user import User
     return session.query(User).order_by(desc(User.id)).count()
+
+
+def get_jwt_token(user: User):
+    token = jwt.encode(
+        {
+            'public_id': user.public_id,
+            'created_date': str(user.created_date),
+            'exp': datetime.utcnow() + timedelta(days=60)
+        },
+        current_app.config['SECRET_KEY'],
+        "HS256"
+    )
+    return token

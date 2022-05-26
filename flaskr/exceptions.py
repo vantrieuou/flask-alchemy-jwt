@@ -1,9 +1,9 @@
-class MyException(Exception):
+class AppException(Exception):
     error_code = 0
     error_message = "Message is empty, please check."
 
 
-class JwtTokenException(MyException):
+class JwtTokenException(AppException):
     error_code = 401
     error_message = "There's an error of JWT token"
 
@@ -18,7 +18,7 @@ class JwtTokenInvalid(JwtTokenException):
     error_message = "JWT token is invalid"
 
 
-class InvalidFormInput(MyException):
+class InvalidFormInput(AppException):
     error_code = 400
 
     def __init__(self, error_message: str):

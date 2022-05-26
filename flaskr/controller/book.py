@@ -1,5 +1,5 @@
 """Blueprint to organize and group, views related
-to the '/auth' endpoint of HTTP REST API.
+to the '/books' endpoint of HTTP REST API.
 """
 
 from flask import (
@@ -14,7 +14,7 @@ bp = Blueprint('book', __name__, url_prefix='/books')
 @bp.route('', methods=['GET'])
 @token_required
 def ebook_list(current_user) -> Response:
-    # Use Joined Eager Loading to save query statement
+    # Use Joined Eager Loading to save number of query statements
     users = db_session.query(User).options(joinedload(User.books, innerjoin=True)).all()
     output = []
     for u in users:

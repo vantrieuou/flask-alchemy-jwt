@@ -1,9 +1,7 @@
-import jwt
-from flask import json
-from tests.util import create_user, get_unique_email, get_jwt_token
+from tests.util import get_jwt_token
 
 
-def test_ebook_list_with_correct_credentials_passed_returning_200_status_code(client, db_session):
+def test_ebook_list_with_correct_credentials_passed_returning_book_data(client, db_session):
     """
         GIVEN a Flask application
         WHEN the '/books' URL is requested (GET)

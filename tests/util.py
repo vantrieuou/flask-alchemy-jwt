@@ -1,6 +1,5 @@
 import time
 from werkzeug.security import generate_password_hash
-from sqlalchemy import desc
 from datetime import datetime, timedelta
 import jwt
 from flask import current_app
@@ -34,20 +33,6 @@ def create_user(session):
     session.commit()
 
     return user
-
-def get_users_count(session):
-    """Counts the amount of user contained in the database.
-
-    Parameters:
-        session: a SLQAlchmey Session object.
-
-    Returns:
-        An int value corresponding to the amount of registered user.
-    """
-
-    from flaskr.model.user import User
-    return session.query(User).order_by(desc(User.id)).count()
-
 
 def get_jwt_token(user):
     token = jwt.encode(

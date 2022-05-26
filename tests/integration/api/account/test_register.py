@@ -1,5 +1,5 @@
 from flask import json
-from tests.util import create_user, get_unique_email
+from tests.util import get_unique_email
 
 
 def test_auth_register_with_data_well_formatted_returning_200_status_code(client):

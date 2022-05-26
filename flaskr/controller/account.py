@@ -1,9 +1,9 @@
 """Blueprint to organize and group, views related
-to the '/auth' endpoint of HTTP REST API.
+to the '/account' endpoint of HTTP REST API.
 """
 
 from flask import (
-    current_app, abort, Blueprint, request, Response, make_response, jsonify
+    current_app, Blueprint, request, Response, make_response, jsonify
 )
 from werkzeug.security import generate_password_hash, check_password_hash
 import uuid

@@ -1,10 +1,21 @@
-export FLASK_APP=flaskr  && export FLASK_ENV=development
+# On local
 
-flask init-db
+1. Install virtual environment: `python3 -m venv venv && source venv/bin/activate`
 
+2. Install all packages: `pip install -r requirements.txt`
 
-IN docker
+3. Clone file ` cp .env.example .env` and config in `.env`
 
-to run a command: 
-docker exec pythonflask pwd
-docker exec pythonflask flask init-db
+4. Testing: `python -m pytest tests/`
+
+5. Start dev server `export FLASK_APP=flaskr && export FLASK_ENV=development && flask run --port 5001`. You can use SQLite if running at local
+
+# On docker
+
+1. Clone file `cp .env.example .env` and config in `.env`
+
+2. Run docker compose: `docker-compose up -d` 
+
+3. Generate MySQL schema: `docker exec pythonflask flask init-db`
+
+4. Testing: `docker exec pythonflask python -m pytest tests/`

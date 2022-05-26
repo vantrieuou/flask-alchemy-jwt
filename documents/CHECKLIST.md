@@ -14,15 +14,9 @@ Done - Docker and Dockerfile
 No need - readme
 Done - Commented code that can serve as documentation of the system
 Done - Write document of architecture
-Write document of how to set up
+Done - Write document of how to set up
 Done - clone repo into your own account
 invite to repo:
 * @xavier.anguera
 * @alan.shang
 
-
-Document:
-* how to generate secret key
-* layout structure
-* architecture
-* Exception following https://flask.palletsprojects.com/en/0.12.x/patterns/apierrors/

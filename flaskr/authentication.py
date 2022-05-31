@@ -18,7 +18,7 @@ def token_required(f):
         try:
             data = jwt.decode(token, current_app.config['SECRET_KEY'], algorithms=["HS256"])
             current_user = db_session.query(User).filter_by(public_id=data['public_id']).first()
-        except:
+        except Exception:
             raise JwtTokenInvalid
 
         return f(current_user, *args, **kwargs)

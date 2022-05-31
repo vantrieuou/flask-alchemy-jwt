@@ -17,15 +17,15 @@ def ebook_list(current_user) -> Response:
     # Use Joined Eager Loading to save number of query statements
     users = db_session.query(User).options(joinedload(User.books, innerjoin=True)).all()
     output = []
-    for u in users:
-        for book in u.books:
-            book_data = {}
-            book_data['id'] = book.id
-            book_data['name'] = book.name
-            book_data['author'] = book.author
-            book_data['publisher'] = book.publisher
-            book_data['user_email'] = book.user.email
-            output.append(book_data)
+    for user in users:
+        for book in user.books:
+            output.append({
+                'id': book.id,
+                'name': book.name,
+                'author': book.author,
+                'publisher': book.publisher,
+                'user_email': user.email
+            })
 
     return make_response(jsonify({
         'status': 'success',

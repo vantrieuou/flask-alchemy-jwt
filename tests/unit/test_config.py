@@ -18,4 +18,4 @@ def test_development_config():
     assert Development.DEBUG
     assert Development.SECRET_KEY == 'dev'
     assert Development.JWT_SECRET_KEY == 'dev'
-    assert Development.SQLALCHEMY_DATABASE_URI
+    hasattr(Development, 'SQLALCHEMY_DATABASE_URI')

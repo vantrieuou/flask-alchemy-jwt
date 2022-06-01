@@ -25,8 +25,7 @@ def drop_db() -> None:
 def create_test_user() -> None:
     """Creates test user."""
 
-    from flaskr.model.user import User
-    from flaskr.model.book import Book
+    from flaskr.model import User, Book, Employee, Engineer, Manager
     from werkzeug.security import generate_password_hash
     from flaskr.database import db_session
 
@@ -39,6 +38,10 @@ def create_test_user() -> None:
         db_session.add(resetting_user)
         book = Book(user_id=1, name="Book1", author='author1', publisher='publisher', book_prize=1000)
         db_session.add(book)
+        db_session.add(Manager(manager_name="Manager .1 Jonh", apartment="Manager", salary=4000))
+        db_session.add(Manager(manager_name="Manager .1 Jonh", apartment="Manager", salary=3000))
+        db_session.add(Engineer(engineer_name="Engineer .1 Comic", apartment="Engineer", salary=3000))
+
         db_session.commit()
 
 @pytest.fixture
@@ -60,7 +63,8 @@ def app(request):
         'TESTING': True,
         'SQLALCHEMY_DATABASE_URI': os.environ.get('DATABASE_URL'),
         'SECRET_KEY': 'testing',
-        'JWT_SECRET_KEY': 'testing'
+        'JWT_SECRET_KEY': 'testing',
+        'DATABASE_LOGGING': bool(os.environ.get('DATABASE_LOGGING', True)),
     })
 
     # add to the scope

@@ -82,9 +82,11 @@ def init_controllers(app: Flask) -> None:
     from .controller import account
     from .controller import book
     from .controller import index
+    from .controller import employee
     app.register_blueprint(account.bp)
     app.register_blueprint(index.bp)
     app.register_blueprint(book.bp)
+    app.register_blueprint(employee.bp)
 
 def init_commands(app: Flask) -> None:
     from flaskr.commands import register_commands

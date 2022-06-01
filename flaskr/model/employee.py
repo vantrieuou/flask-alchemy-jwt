@@ -30,6 +30,9 @@ class Manager(Employee):
     id = Column(Integer, ForeignKey("employee.id"), primary_key=True)
     manager_name = Column(String(30))
 
+    company_id = Column(ForeignKey("company.id"))
+    company = relationship("Company", back_populates="managers")
+
     __mapper_args__ = {
         "polymorphic_identity": "manager",
     }

@@ -3,9 +3,9 @@ from sqlalchemy.orm import relationship
 from flaskr.database import Base
 
 class Book(Base):
-    __tablename__ = 'books'
+    __tablename__ = 'book'
     id = Column(Integer, primary_key=True)
-    user_id = Column(Integer, ForeignKey('users.id'), nullable=False)
+    user_id = Column(Integer, ForeignKey('user.id'), nullable=False)
     user = relationship("User", back_populates="books")
     name = Column(String(50), nullable=False)
     author = Column(String(50), nullable=False)

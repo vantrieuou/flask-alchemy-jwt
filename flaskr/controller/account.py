@@ -7,7 +7,7 @@ from flask import (
 )
 from werkzeug.security import generate_password_hash, check_password_hash
 import uuid
-from flaskr.model.user import User
+from flaskr.model import User
 from flaskr.database import db_session
 from flaskr.exceptions import InvalidFormInput, JwtTokenInvalid
 import jwt

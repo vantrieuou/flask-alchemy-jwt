@@ -3,7 +3,7 @@ from sqlalchemy.orm import relationship
 from flaskr.database import Base
 
 class User(Base):
-    __tablename__ = 'users'
+    __tablename__ = 'user'
     id = Column(Integer, primary_key=True)
     public_id = Column(String(100), unique=True)
     email = Column(String(50), unique=True)

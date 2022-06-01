@@ -32,6 +32,7 @@ class Production(Default):
     SECRET_KEY = '0asdasa04f2af45d3a4e161a7dd2d17fddasdae47f'
     JWT_SECRET_KEY = '004f2af4d5d3a4e161a7dd2d17fdae47f'
     SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL')
+    SQLALCHEMY_DATABASE_ECHO = os.environ.get('DATABASE_LOGGING', False)
 
 
 class Development(Default):
@@ -52,3 +53,4 @@ class Development(Default):
     JWT_SECRET_KEY = 'dev'
     # Import database config by file .env
     SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL')
+    SQLALCHEMY_DATABASE_ECHO = os.environ.get('DATABASE_LOGGING', True)

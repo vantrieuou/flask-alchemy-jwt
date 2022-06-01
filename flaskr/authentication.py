@@ -1,7 +1,7 @@
 import jwt
 from functools import wraps
 from flask import request, current_app
-from flaskr.model.user import User
+from flaskr.model import User
 from flaskr.database import db_session
 from flaskr.exceptions import JwtTokenNotFound, JwtTokenInvalid
 

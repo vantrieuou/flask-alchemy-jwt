@@ -22,7 +22,7 @@ def init(app: Flask) -> None:
     """
 
     global Base, engine, db_session
-    engine = create_engine(app.config['SQLALCHEMY_DATABASE_URI'])
+    engine = create_engine(app.config['SQLALCHEMY_DATABASE_URI'], echo=app.config['DATABASE_LOGGING'])
     db_session = scoped_session(sessionmaker(autocommit=False,
                                              autoflush=False,
                                              bind=engine))

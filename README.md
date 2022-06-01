@@ -21,12 +21,6 @@ Please provide:
 
 Bonus points: Add a script that tests the API end-to-end that can be used as an automated regression test.
 
- 
-In order to work on the project please clone the repo into your own account. 
-Once finished, please invite the following people to your repo:
-* @xavier.anguera
-* @alan.shang
-
 
 [How to set up?](documents/setup.md)
 

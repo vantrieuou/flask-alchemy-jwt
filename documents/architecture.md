@@ -1,6 +1,6 @@
 # Patterns
 
-This project uses 3-tiers players as its base architecture. They include:
+This project uses 3-tiers layers as its base architecture. They include:
 
 `/model:` domain layer
 
